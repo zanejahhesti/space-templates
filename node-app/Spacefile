@@ -1,6 +1,6 @@
 v: 0
 micros:
-  - name: node-micro
+  - name: backend
     src: .
     engine: nodejs16
     run: "node index.js"
