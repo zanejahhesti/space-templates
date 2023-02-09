@@ -1,5 +1,0 @@
-v: 0
-micros:
-  - name: static-app
-    src: .
-    engine: svelte-kit
