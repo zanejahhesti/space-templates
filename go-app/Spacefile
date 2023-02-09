@@ -1,0 +1,11 @@
+v: 0
+micros:
+  - name: go-app
+    src: .
+    engine: custom
+    commands:
+      - go get
+      - go build main.go
+    run: ./main
+    include:
+      - main
