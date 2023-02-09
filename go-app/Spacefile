@@ -1,6 +1,6 @@
 v: 0
 micros:
-  - name: go-app
+  - name: backend
     src: .
     engine: custom
     commands:
