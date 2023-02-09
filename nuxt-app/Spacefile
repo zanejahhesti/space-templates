@@ -1,6 +1,6 @@
 v: 0
 micros:
-  - name: backend
+  - name: nuxt-app
     src: .
-    engine: next
+    engine: nuxt
     primary: true
