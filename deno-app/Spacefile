@@ -1,0 +1,21 @@
+v: 0
+micros:
+  - name: backend
+    src: .
+    engine: custom
+    primary: true
+    commands:
+      - apt install -y unzip
+      - curl -fsSL https://deno.land/x/install/install.sh | sh
+      - $HOME/.deno/bin/deno compile --allow-net --allow-read --allow-env main.ts
+      - mv read main
+      - chmod +x main
+    run: ./main
+    include:
+      - main
+      - static
+    presets:
+      env:
+      - name: DENO_DIR
+        description: deno config dir
+        default: "/tmp/deno_dir"
