@@ -1,6 +1,6 @@
 v: 0
 micros:
-  - name: nuxt-app
+  - name: backend
     src: .
-    engine: nuxt
+    engine: python3.9
     primary: true
