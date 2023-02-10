@@ -17,5 +17,5 @@ micros:
     presets:
       env:
       - name: DENO_DIR
-        description: deno config dir
+        description: deno config dir (do not change /tmp)
         default: "/tmp/deno_dir"
