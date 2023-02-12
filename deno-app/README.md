@@ -9,7 +9,9 @@ This is a template to run Deno App on Space.
 ## Project Structure
 ```
 .
-├── static/
+├── static
+│   ├── index.html
+│   └── 405.html
 ├── main.ts
 ├── Spacefile
 ├── Discovery.md
