@@ -2,9 +2,11 @@
 This is a template to run Python App on Space that uses [FastAPI](https://fastapi.tiangolo.com/) as the web framework.
 
 ## Getting Started
-To run it on Space, you need to have a Space account. If you don't have one, you can create one for free [here](https://deta.space/signup). Then install the Space CLI and link your Space account to the CLI. You can find the instructions to do that [here](https://deta.space/docs/en/basics/cli). Run command `space new` in the root of your project to create a new app on Space. This will create a `.space` folder in your project. You can then run `space push` to push your app to Space with the following file structure. 
+1. First, you need to have a Space account. If you don't have one, you can create one for free [here](https://deta.space/signup). 
+2. Then install the Space CLI and link your Space account to the CLI. You can find the instructions to do that [here](https://deta.space/docs/en/basics/cli). 
+3. Run command `space new` inside the root of your project to create a new app on Space. The project structure should look like the following.
 
-## File Structure
+## Project Structure
 ```
 .
 ├── main.py
@@ -21,7 +23,8 @@ To run it on Space, you need to have a Space account. If you don't have one, you
 - `Spacefile` - This is the config file for space cli to deploy your app. To know more about this file please refer to [Spacefile](https://deta.space/docs/en/reference/spacefile#whats-the-spacefile) guide.
 - `Discovery.md` - This file contains the information about your app to present on the [Space App Marketplace](https://deta.space/discovery).
   
-- `.spaceignore` - This file contains the list of files and folders to ignore while deploying your app. This file is optional and follows the same syntax as `.gitignore`.
-  
+- `.spaceignore` - This file contains the list of files and directories to ignore while deploying your app. This file is optional and follows the same syntax as `.gitignore`.
+
 ## Important
-Do not change the name of the `.space` folder. This folder is used by the Space CLI to push your app on Space. This folder contains sensitive information about your app. Do not share this folder with anyone or push it to any public repository.
+> Running `space new` will create a **.space** directory inside your project. This contains sensitive information about your app and is used by the Space CLI to push your app on Space. Do not change the name of the directory or push it to any public repository.
+
