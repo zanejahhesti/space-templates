@@ -21,9 +21,10 @@ This is a template to run Python App on Space that uses [FastAPI](https://fastap
 - `requirements.txt` - This file contains the list of dependencies of your app. This file is optional. Add `deta` to this file to avoid issues with the old `deta-python-sdk`.
   
 - `Spacefile` - This is the config file for space cli to deploy your app. To know more about this file please refer to [Spacefile](https://deta.space/docs/en/reference/spacefile#whats-the-spacefile) guide.
+
 - `Discovery.md` - This file contains the information about your app to present on the [Space App Marketplace](https://deta.space/discovery).
   
-- `.spaceignore` - This file contains the list of files and directories to ignore while deploying your app. This file is optional and follows the same syntax as `.gitignore`.
+- `.spaceignore` - This file contains the list of files and directories to ignore while deploying your app. This file is optional and follows the same syntax as *.gitignore*.
 
 ## Important
 > Running `space new` will create a **.space** directory inside your project. This contains sensitive information about your app and is used by the Space CLI to push your app on Space. Do not change the name of the directory or push it to any public repository.
