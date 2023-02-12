@@ -28,5 +28,7 @@ This is a template to run Deno App on Space.
 ## Important
 > Running `space new` will create a **.space** directory inside your project. This contains sensitive information about your app and is used by the Space CLI to push your app on Space. Do not change the name of the directory or push it to any public repository.
 
+> Spacefile contains custom commands to compile and run your app. Be sure to update the commands according to your project structure and requirements.
+
 ###  More Resources
 - [Oden - Deno on Space](https://github.com/abdelhai/oden)
