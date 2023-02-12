@@ -4,7 +4,7 @@ This is a template to run Deno App on Space.
 ## Getting Started
 1. First, you need to have a Space account. If you don't have one, you can create one for free [here](https://deta.space/signup). 
 2. Then install the Space CLI and link your Space account to the CLI. You can find the instructions to do that [here](https://deta.space/docs/en/basics/cli). 
-3. Run command `space new` inside the root of your project to create a new app on Space. The project structure should look like the following.
+3. Run command `space new` inside the root of your project to create a new app on Space. A basic project structure should look like the following.
    
 ## Project Structure
 ```
@@ -17,7 +17,7 @@ This is a template to run Deno App on Space.
 ├── Discovery.md
 └── .spaceignore
 ```
-- `static/` - This directory contains all the static files that you want to serve.
+- `static` - This directory contains all the static files that you want to serve.
   
 - `main.ts` - This is the entry point of your app. You can write your server logic here.
   
