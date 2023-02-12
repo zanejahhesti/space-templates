@@ -1,5 +1,5 @@
 # Python App On Space
-This is a template for python app on space. This template is a simple python app with FastAPI.
+This is a template to run Python App on Space. This template uses [FastAPI](https://fastapi.tiangolo.com/) as the web framework. You can use any other web framework like [Flask](https://flask.palletsprojects.com/en/2.0.x/).
 
 ## Getting Started
 To run it on Space, you need to have a Space account. If you don't have one, you can create one for free [here](https://deta.space/signup). Then install the Space CLI and link your Space account to the CLI. You can find the instructions to do that [here](https://deta.space/docs/en/basics/cli). Run command `space new` in the root of your project to create a new app on Space. This will create a `.space` folder in your project. You can then run `space push` to push your app to Space with the following file structure. 
