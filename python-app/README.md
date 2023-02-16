@@ -1,31 +1,31 @@
-# Python App On Space
-This is a template to run Python App on Space that uses [FastAPI](https://fastapi.tiangolo.com/) as the web framework.
+# Python App on Space
+
+This minimal template is an example of a Space app built with Python and [FastAPI](https://fastapi.tiangolo.com).
 
 ## Getting Started
-1. First, you need to have a Space account. If you don't have one, you can create one for free [here](https://deta.space/signup). 
-2. Then install the Space CLI and link your Space account to the CLI. You can find the instructions to do that [here](https://deta.space/docs/en/basics/cli). 
-3. Run command `space new` inside the root of your project to create a new app on Space. The project structure should look like the following.
+
+1. First, you need to have a Space account. If you don't have one, you can create one for free [here](https://deta.space/signup).
+2. Then install the Space CLI and link your Space account to the CLI. You can find the instructions to do that [here](https://deta.space/docs/en/basics/cli).
+3. Run the command `space new` inside the root of your project to create a new app on Space. The project structure should look like the following.
 
 ## Project Structure
-```
+
+```tree
 .
 ├── main.py
 ├── requirements.txt
 ├── Spacefile
-├── Discovery.md
-└── .spaceignore
+└── Discovery.md
 ```
 
-- `main.py` - This is the entry point of your app. This file contains the code to run your app. Do not change the name of this file. This file must contain an identifier `app` which is an instance of **asgi** (e.g. FastAPI) or **wsgi** (e.g. Flask).
-  
-- `requirements.txt` - This file contains the list of dependencies of your app. This file is optional. Add `deta` to this file to avoid issues with the old `deta-python-sdk`.
-  
-- `Spacefile` - This is the config file for space cli to push your app  in Space. To know more about this file please refer to [Spacefile](https://deta.space/docs/en/reference/spacefile#whats-the-spacefile) guide.
+- `main.py`: This is the entry point of your app, and it contains the code to run your app. Do not change the name of this file. It must contain an identifier `app` which is an instance of an **ASGI** (e.g. FastAPI) or **WSGI** (e.g. Flask) application.
 
-- `Discovery.md` - This file contains the information about your app to present on the [Space App Marketplace](https://deta.space/discovery). To know more about this file please refer to [Discovery.md](https://deta.space/docs/en/reference/discovery) guide.
-  
-- `.spaceignore` - This file contains the list of files and directories to ignore while deploying your app. This file is optional and follows the same syntax as *.gitignore*.
+- `requirements.txt`: This optional file contains your app's dependencies. It is recommended to pin versions of packages (e.g. `deta~=1.1.0`) in order to avoid issues without outdated packages or version conflicts. Read more about version pinning [here](https://medium.com/knerd/best-practices-for-python-dependency-management-cc8d1913db82).
+
+- `Spacefile`: This is the configuration file used by Space to build and deploy your app. To learn more please refer to the [Spacefile](https://deta.space/docs/en/reference/spacefile#whats-the-spacefile) guide.
+
+- `Discovery.md`: This optional file contains information about your app to display on the [Space App Marketplace](https://deta.space/discovery). To learn more please refer to the [Discovery.md](https://deta.space/docs/en/reference/discovery) guide.
 
 ## Important
-> Running `space new` will create a **.space** directory inside your project. This contains sensitive information about your app and is used by the Space CLI to push your app on Space. Do not change the name of the directory or push it to any public repository.
 
+Running `space new` will create a `.space` directory inside your project. This directory contains sensitive information about your app and is used by the Space CLI to push your app to Space. Do not change the name of the directory, include it in any version control software, or add it to repositories.
