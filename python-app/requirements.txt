@@ -1,2 +1,2 @@
-deta
-fastapi
+deta~=1.1.0
+fastapi~=0.92.0
