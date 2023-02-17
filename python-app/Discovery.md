@@ -1,11 +1,11 @@
 ---
-title: "Python App"
+title: "Python App Template"
 tagline: "A simple Python app template running on Space"
-git: "https://github.com/username/repo"
-theme_color: "#1c42684f"
+git: "https://github.com/deta/space-templates"
+theme_color: "#2ed611"
 ---
 
 ## Features
 
-- Uses Python 3.9
-- Easy to write and run
+- Runs on Python 3.9
+- Says "hello"
