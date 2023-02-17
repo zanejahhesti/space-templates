@@ -2,11 +2,11 @@
 
 This minimal template is an example of a Space app built with Python and [FastAPI](https://fastapi.tiangolo.com).
 
-## Getting Started
+## Setup
 
-1. First, you need to have a Space account. If you don't have one, you can create one for free [here](https://deta.space/signup).
-2. Then install the Space CLI and link your Space account to the CLI. You can find the instructions to do that [here](https://deta.space/docs/en/basics/cli).
-3. Run the command `space new` inside the root of your project to create a new app on Space. The project structure should look like the following.
+1. If you don't already have a Space account, create one for free [here](https://deta.space/signup).
+2. Install the Space CLI and link your Space account to the CLI. Instructions to do that can be found [here](https://deta.space/docs/en/basics/cli).
+3. Run the `space new` command inside the root of your project to create a new builder project on Space.
 
 ## Project Structure
 
