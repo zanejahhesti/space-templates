@@ -1,11 +1,10 @@
-from deta import Deta
+from deta import Base, Drive
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import JSONResponse, Response
 
 app = FastAPI()
-deta = Deta()
-users_db = deta.Base("users")
-avatars_drive = deta.Drive("avatars")
+users_db = Base("users")
+avatars_drive = Drive("avatars")
 
 
 @app.get("/")
