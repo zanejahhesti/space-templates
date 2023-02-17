@@ -1,3 +1,4 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
 v: 0
 micros:
   - name: backend
@@ -17,5 +18,5 @@ micros:
     presets:
       env:
       - name: DENO_DIR
-        description: deno config dir (do not change /tmp)
+        description: Deno configuration directory (do not change /tmp)
         default: "/tmp/deno_dir"
