@@ -32,6 +32,10 @@ When you are ready to release your app , run the `space release` command. This w
 
 - [Python App](python-app)
 
+## Contributing
+
+If you want to report a bug, submit a fix, add a template, or otherwise contribute, please read the [contributing guidelines](CONTRIBUTING.md).
+
 [builder]: https://deta.space/builder "Space Builder"
 [discovery]: https://deta.space/discovery "Space Discovery"
 [spacefile-ref]: https://deta.space/docs/en/reference/spacefile "Spacefile Reference"
