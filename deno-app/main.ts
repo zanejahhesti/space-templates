@@ -1,7 +1,5 @@
 import { serve } from "https://deno.land/std@0.173.0/http/server.ts";
-import { Deta } from "https://esm.sh/deta@1.1.0";
-
-const deta = Deta(Deno.env.get("DETA_PROJECT_KEY")!);
+import { Base } from "https://esm.sh/deta@1.1.0";
 
 const handler = async (request: Request): Promise<Response> => {
   const url = new URL(request.url);
@@ -17,7 +15,7 @@ const handler = async (request: Request): Promise<Response> => {
 
     case "/users": {
       // Connect to a Base for storing user data
-      const users_base = deta.Base("users");
+      const users_base = Base("users");
       if (request.method === "GET") {
         // Fetch all users
         const users = await users_base.fetch();
