@@ -8,45 +8,77 @@ import (
 
 	"github.com/deta/deta-go/deta"
 	"github.com/deta/deta-go/service/base"
-	"github.com/deta/deta-go/service/drive"
 	"github.com/labstack/echo/v4"
 )
+
+type TodoItem struct {
+	Text string `json:"text" xml:"text" form:"text" query:"text"`
+}
 
 var d, _ = deta.New()
 
 func main() {
+	var port string
+	if os.Getenv("PORT") != "" {
+		port = os.Getenv("PORT")
+	} else {
+		port = "8080"
+	}
+
 	e := echo.New()
 
 	e.GET("/", func(ctx echo.Context) error {
-		return ctx.String(http.StatusOK, "Hello, World!")
-	})
-
-	e.GET("/users", func(ctx echo.Context) error {
-		db, err := base.New(d, "users")
+		html, err := os.ReadFile("./static/index.html")
 		if err != nil {
 			return ctx.String(http.StatusInternalServerError, "Internal Server Error")
 		}
-		var users []map[string]interface{}
-		_, err = db.Fetch(&base.FetchInput{Dest: &users})
+		return ctx.HTML(http.StatusOK, string(html))
+	})
+
+	e.GET("/todos", func(ctx echo.Context) error {
+		// Connect to a Base for storing todo items.
+		todos_base, err := base.New(d, "todos")
+		if err != nil {
+			return ctx.String(http.StatusInternalServerError, "Internal Server Error")
+		}
+		// Fetch all items from the Base.
+		var todos []map[string]interface{}
+		_, err = todos_base.Fetch(&base.FetchInput{Dest: &todos})
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "error: %v\n", err)
 			return ctx.String(http.StatusInternalServerError, "Internal Server Error")
 		}
-		return ctx.JSON(http.StatusOK, users)
+		// Return the items as JSON.
+		return ctx.JSON(http.StatusOK, todos)
 	})
 
-	e.GET("/avatars/:id", func(ctx echo.Context) error {
-		id := ctx.Param("id")
-		drive, _ := drive.New(d, "avatars")
-		r, err := drive.Get(fmt.Sprintf("%s.png", id))
+	e.POST("/todos", func(ctx echo.Context) error {
+		// Connect to a Base for storing todo items.
+		todos_base, err := base.New(d, "todos")
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "error: %v\n", err)
 			return ctx.String(http.StatusInternalServerError, "Internal Server Error")
 		}
-		defer r.Close()
-		return ctx.Stream(http.StatusOK, "image/png", r)
+		// Get the item from the request body.
+		item := new(TodoItem)
+		if err := ctx.Bind(item); err != nil {
+			fmt.Fprintf(os.Stderr, "error: %v\n", err)
+			return ctx.String(http.StatusInternalServerError, "Internal Server Error")
+		}
+		// Put the item into the Base.
+		key, err := todos_base.Put(item)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "error: %v\n", err)
+			return ctx.String(http.StatusInternalServerError, "Internal Server Error")
+		}
+		resp := map[string]string{
+			"text": item.Text,
+			"key": key,
+		}
+		// Return the response as JSON.
+		return ctx.JSON(http.StatusCreated, resp)
 	})
-	
-	fmt.Println("Server running at: http://localhost:8080")
-	log.Fatal(e.Start(":8080"))
+
+	fmt.Println("Server running on http://localhost:" + port)
+	log.Fatal(e.Start(":" + port))
 }
