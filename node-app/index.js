@@ -8,7 +8,7 @@ const port = parseInt(process.env.PORT) || 8080;
 app.use(express.json());
 
 app.get("/", async (request, response) => {
-  response.send(fs.readFileSync("./static/index.html", "utf8"));
+  response.send(fs.readFileSync("./static/index.html"));
 });
 
 app.get("/todos", async (request, response) => {
@@ -32,5 +32,5 @@ app.post("/todos", async (request, response) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+  console.log(`Server running on http://localhost:${port}`);
 });
