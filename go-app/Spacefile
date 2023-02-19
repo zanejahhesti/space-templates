@@ -1,3 +1,4 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
 v: 0
 micros:
   - name: backend
@@ -6,6 +7,7 @@ micros:
     commands:
       - go get
       - go build main.go
-    run: ./main
     include:
       - main
+      - static
+    run: ./main
